@@ -216,12 +216,27 @@ const RulesPage = () => {
 
   return (
     <div className={styles.rulesPage}>
+      {/* Навигация */}
+      <nav className={styles.navigation}>
+        <Link to="/" className={styles.navLogo}>
+          rush
+        </Link>
+        <ul className={styles.navLinks}>
+          <li>
+            <Link to="/">Главная</Link>
+          </li>
+          <li>
+            <Link to="/rules">Правила</Link>
+          </li>
+        </ul>
+      </nav>
+
       <header className={styles.header}>
         <div className="container">
           <Link to="/" className={styles.backButton}>
-            ← Назад к игре
+            ← Назад
           </Link>
-          <h1>Интерактивные правила РУШ</h1>
+          <h1>Интерактивные правила Rush</h1>
           <p>Выбери режим и бонус, чтобы узнать, как играть</p>
         </div>
       </header>
@@ -231,7 +246,7 @@ const RulesPage = () => {
           <div className={styles.rulesGrid}>
             {/* Выбор режима */}
             <section className={styles.selectionSection}>
-              <div className="wood-card">
+              <div className="card">
                 <h2>1. Выбери режим игры</h2>
                 <p className={styles.sectionDescription}>
                   Режим определяется первым броском основного стартового блока
@@ -254,7 +269,7 @@ const RulesPage = () => {
               </div>
 
               {/* Выбор бонуса */}
-              <div className="wood-card">
+              <div className="card">
                 <h2>2. Выбери бонусный блок</h2>
                 <p className={styles.sectionDescription}>
                   Бонус определяется броском бонусного блока
@@ -280,7 +295,7 @@ const RulesPage = () => {
 
             {/* Описание правил */}
             <section className={styles.rulesSection}>
-              <div className="wood-card">
+              <div className="card">
                 <h2>Как играть</h2>
 
                 {!selectedMode && (

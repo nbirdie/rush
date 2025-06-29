@@ -1,5 +1,47 @@
 .homePage {
   min-height: 100vh;
+  background: var(--color-white);
+}
+
+/* Навигация */
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navLogo {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-dark);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: var(--color-gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--color-accent);
 }
 
 /* Hero Section */
@@ -9,201 +51,287 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-  background: 
-    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+  padding: 120px 0 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
 }
 
 .heroContent {
-  max-width: 600px;
-  margin: 0 auto;
-  animation: fadeInUp 1s ease-out;
-}
-
-.gameIcon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-}
-
-.title {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(45deg, var(--accent-gold), #f4e27c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  letter-spacing: 2px;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: var(--warm-beige);
-  font-style: italic;
-  opacity: 0.9;
-}
-
-.gameInfo {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
-
-.infoItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.infoLabel {
-  font-size: 0.9rem;
-  color: var(--warm-beige);
-  opacity: 0.8;
+.title {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--color-dark);
+  letter-spacing: -0.03em;
+  line-height: 0.9;
 }
 
-.infoValue {
-  font-size: 1.2rem;
+.subtitle {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 34px;
+  color: var(--color-gray);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.gameStats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statNumber {
+  font-size: 2rem;
   font-weight: 600;
-  color: var(--accent-gold);
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 .heroButtons {
   display: flex;
-  gap: 1rem;
+  gap: 24px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-/* About Grid */
-.aboutGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+/* Game Section */
+.gameSection {
+  padding: 120px 0;
+  background: var(--color-light-gray);
 }
 
-.goalList {
-  list-style: none;
-  margin-bottom: 1rem;
-}
-
-.goalList li {
-  padding: 0.5rem 0;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.goalList li::before {
-  content: '🎯';
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-}
-
-.lifeInfo {
-  font-style: italic;
-  color: var(--warm-beige);
-  opacity: 0.9;
-  margin-top: 1rem;
-}
-
-.blockTypes {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.blockType {
-  padding: 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-gold);
-}
-
-.gameModes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.75rem;
-}
-
-.gameMode {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.gameMode:hover {
-  background: rgba(212, 175, 55, 0.1);
-  transform: translateY(-2px);
-}
-
-.modeIcon {
-  font-size: 1.2rem;
-}
-
-/* CTA Section */
-.ctaSection {
-  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--primary-dark) 100%);
-  padding: 80px 0;
+.sectionHeader {
   text-align: center;
-}
-
-.ctaContent h2 {
-  margin-bottom: 1rem;
-  color: var(--accent-gold);
-}
-
-.ctaContent p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--warm-beige);
-  opacity: 0.9;
-  max-width: 600px;
+  margin-bottom: 80px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.sectionHeader h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.sectionDescription {
+  font-size: 1.25rem;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.infoCard {
+  background: var(--color-white);
+  padding: 48px 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(17, 17, 17, 0.06);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(17, 17, 17, 0.12);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.infoCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-dark);
+}
+
+.infoCard p {
+  color: var(--color-gray);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Modes Section */
+.modesSection {
+  padding: 120px 0;
+}
+
+.modesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.modeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.modeCard:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(215, 38, 56, 0.1);
+}
+
+.modeIcon {
+  font-size: 2rem;
+}
+
+.modeName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 120px 0;
+  background: var(--color-dark);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  color: var(--color-white);
+  margin-bottom: 24px;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.ctaContent p {
+  font-size: 1.25rem;
+  margin-bottom: 48px;
+  color: var(--color-medium-gray);
+  line-height: 1.6;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
-  .gameInfo {
-    gap: 1rem;
+  .navigation {
+    padding: 24px 20px;
+  }
+  
+  .navLogo {
+    font-size: 24px;
+  }
+  
+  .navLinks {
+    gap: 20px;
+  }
+  
+  .navLinks a {
+    font-size: 14px;
+  }
+  
+  .hero {
+    padding: 100px 0 60px;
+  }
+  
+  .gameStats {
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  
+  .statNumber {
+    font-size: 1.5rem;
   }
   
   .heroButtons {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
   
-  .aboutGrid {
+  .gameSection,
+  .modesSection,
+  .ctaSection {
+    padding: 80px 0;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 60px;
+  }
+  
+  .infoGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 32px;
   }
   
-  .gameModes {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.5rem;
+  .infoCard {
+    padding: 32px 24px;
   }
   
-  .gameMode {
-    flex-direction: column;
-    text-align: center;
-    padding: 0.75rem 0.5rem;
+  .modesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  .modeCard {
+    padding: 24px 16px;
   }
   
   .modeIcon {
     font-size: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 20px;
   }
 } 
